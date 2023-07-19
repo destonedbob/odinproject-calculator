@@ -17,3 +17,16 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
     return num1 / num2;
 }
+
+let firstNum;
+let operatorMapping = {
+    '+' : add,
+    '-' : subtract,
+    '*' : multiply,
+    '/' : divide,
+};
+let secondNum;
+
+function operate(operator, num1, num2) {
+    return operatorMapping[operator](num1, num2);
+}   
