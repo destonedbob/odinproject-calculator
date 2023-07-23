@@ -1,0 +1,36 @@
+* {
+    background-color: darkslategrey;
+}
+
+.calculator {
+    margin: 100px auto;
+    display:flex;
+    justify-content: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+}
+
+.button {
+    border: 1px solid black;
+    padding: 1rem;
+    text-align: center;
+}
+
+.add {
+    grid-column-start: 4;
+    grid-row: 2 / 4;
+}
+
+.enter {
+    grid-column-start: 4;
+    grid-row: 4 / 6;
+}
+
+.zero {
+    grid-column: 1 / 3;
+}
