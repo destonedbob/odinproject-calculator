@@ -30,3 +30,13 @@ let secondNum;
 function operate(operator, num1, num2) {
     return operatorMapping[operator](num1, num2);
 }   
+
+let clearButton = document.querySelector('.clear')
+let displayScreen = document.querySelector('.display')
+
+clearButton.addEventListener('click', clear);
+
+// function for clearing display
+function clear() {
+    displayScreen.textContent = ''
+}
