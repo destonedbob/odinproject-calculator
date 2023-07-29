@@ -14,6 +14,8 @@ h1 {
 
 .calculator {
     margin: 50px auto;
+    display: flex;
+    flex:1 1 0;
 }
 
 .display-container {
@@ -23,7 +25,9 @@ h1 {
     flex-direction: column;
     margin: 10px;
     box-shadow: -2px -2px rgb(32, 32, 32);
+    flex: 0.3 0.3 0;
     border: 1px solid black;
+    display:flex;
 }
 
 .display, .subdisplay {
@@ -37,6 +41,7 @@ h1 {
     padding: 20px;
     font-weight: 1000;
     font-size: 24px;
+    flex:2 2 0;
 }
 
 .subdisplay {
@@ -44,19 +49,23 @@ h1 {
     padding-right: 20px;
     padding: 10px  20px 0px 20px;
     vertical-align: middle;
+    flex:1 1 0;
 }
 
 .inner-calculator {
     border-radius: 10px;
     border: 1px solid black;
     padding: 20px;
-    max-width: 30vw;
+    width: 30vw;
+    height: 35vw;
     margin: auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgb(54, 54, 54);
     box-shadow: 5px 5px rgb(32, 32, 32);
+    padding-top:35px;
+    padding-bottom:35px;
 }
 
 .buttons {
@@ -67,6 +76,7 @@ h1 {
     grid-template-rows: repeat(5, 1fr);
     background-color: rgb(54, 54, 54);
     grid-gap: 5px;
+    flex: 1 1 0;
 }
 
 .button {
@@ -75,13 +85,17 @@ h1 {
     padding: 1rem;
     background-color: rgb(141, 56, 56);
     box-shadow: 2px 2px rgb(32, 32, 32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
 }
 
 #clearAll {
     grid-column: 2 / 4;
 }
 
-/* 
+/*
 #add {
     grid-column-start: 4;
     grid-row: 2 / 4;
