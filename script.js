@@ -29,17 +29,28 @@ let secondNum;
 
 function operate(operator, num1, num2) {
     return operatorMapping[operator](num1, num2);
-}   
+}
 
 // function for clearing display
-function clear() {
-    displayScreen.textContent = ''
+function clearDisplay() {
+    displayText = '';
+    displayScreen.textContent = displayText;
     pointUsed = false;
 }
 
-// function to update display 
+function clearSubdisplay() {
+    subdisplayText = '';
+    subdisplayScreen.textContent = subdisplayText;
+}
+
+function clearAllDisplay() {
+    clearSubdisplay();
+    clearDisplay();
+}
+
+// function to update display
 function updateDisplay() {
-    
+
     console.log(pointUsed)
 
     let buttonPressText = this.textContent;
@@ -56,17 +67,21 @@ function updateDisplay() {
         if (buttonPressText === '.') {
             pointUsed = true;
         }
-    } 
+    }
 }
 
-let clearButton = document.querySelector('.clear')
+let clearButton = document.querySelector('#clear')
+let clearAllButton = document.querySelector('#clearAll')
 let displayScreen = document.querySelector('.display')
+let subdisplayScreen = document.querySelector('.subdisplay')
 let numberButtonList = document.querySelectorAll('.number')
 let displayText = '';
+let subdisplayText = '';
 let currVal;
 let pointUsed = false;
 
-clearButton.addEventListener('click', clear);
+clearButton.addEventListener('click', clearDisplay);
+clearAllButton.addEventListener('click', clearAllDisplay);
 numberButtonList.forEach( button =>
     button.addEventListener('click', updateDisplay)
 );
