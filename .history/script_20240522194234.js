@@ -18,19 +18,6 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-function hasMoreThan10Decimal(num) {
-    let numStr = num.toString();
-
-    if (numStr.includes('.')) {
-        let decimalPart = numStr.split('.')[1];
-
-        if (decimalPart.length > 10) {
-            return true;
-        }
-    }
-    return false;
-}
-
 function updateDisplay(updateNumber) {
     displayScreen.textContent = String(updateNumber);
 }
@@ -49,14 +36,14 @@ function handleNumber(event) {
         clearAll()
     }
     let currNum = displayScreen.textContent;
-    subNumber = currNum + event.target.textContent;
+    subNumber = Math.round(currNum) + event.target.textContent;
+    console.log(currNum)
+    console.log(subNumber)
 
-    if (!hasMoreThan10Decimal(Number(subNumber))) {
-        updateDisplay(Number(subNumber));
-        prevIsNumber = true;
-        prevIsCancel = false;
-        prevIsEqual = false;
-    }
+    updateDisplay(Number(subNumber));
+    prevIsNumber = true;
+    prevIsCancel = false;
+    prevIsEqual = false;
 }
 
 function handleDecimal() {

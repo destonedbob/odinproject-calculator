@@ -50,8 +50,10 @@ function handleNumber(event) {
     }
     let currNum = displayScreen.textContent;
     subNumber = currNum + event.target.textContent;
+    console.log(currNum)
+    console.log(subNumber)
 
-    if (!hasMoreThan10Decimal(Number(subNumber))) {
+    if (!hasMoreThan10Decimal) {
         updateDisplay(Number(subNumber));
         prevIsNumber = true;
         prevIsCancel = false;

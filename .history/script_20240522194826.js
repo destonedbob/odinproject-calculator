@@ -50,13 +50,13 @@ function handleNumber(event) {
     }
     let currNum = displayScreen.textContent;
     subNumber = currNum + event.target.textContent;
+    console.log(currNum)
+    console.log(subNumber)
 
-    if (!hasMoreThan10Decimal(Number(subNumber))) {
-        updateDisplay(Number(subNumber));
-        prevIsNumber = true;
-        prevIsCancel = false;
-        prevIsEqual = false;
-    }
+    updateDisplay(roundToMax10DecimalPlaces(Number(subNumber)));
+    prevIsNumber = true;
+    prevIsCancel = false;
+    prevIsEqual = false;
 }
 
 function handleDecimal() {

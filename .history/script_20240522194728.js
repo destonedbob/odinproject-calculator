@@ -18,17 +18,17 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-function hasMoreThan10Decimal(num) {
+function roundToMax10DecimalPlaces(num) {
     let numStr = num.toString();
 
     if (numStr.includes('.')) {
         let decimalPart = numStr.split('.')[1];
 
         if (decimalPart.length > 10) {
-            return true;
+            return parseFloat(num.toFixed(10));
         }
     }
-    return false;
+    return num;
 }
 
 function updateDisplay(updateNumber) {
@@ -50,13 +50,13 @@ function handleNumber(event) {
     }
     let currNum = displayScreen.textContent;
     subNumber = currNum + event.target.textContent;
+    console.log(currNum)
+    console.log(subNumber)
 
-    if (!hasMoreThan10Decimal(Number(subNumber))) {
-        updateDisplay(Number(subNumber));
-        prevIsNumber = true;
-        prevIsCancel = false;
-        prevIsEqual = false;
-    }
+    updateDisplay(roundToMax10DecimalPlaces(Number(subNumber)));
+    prevIsNumber = true;
+    prevIsCancel = false;
+    prevIsEqual = false;
 }
 
 function handleDecimal() {
