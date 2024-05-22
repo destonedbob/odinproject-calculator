@@ -37,9 +37,6 @@ function handleNumber(event) {
     }
     let currNum = displayScreen.textContent;
     subNumber = currNum + event.target.textContent;
-    console.log(currNum)
-    console.log(subNumber)
-
     updateDisplay(Number(subNumber));
     prevIsNumber = true;
     prevIsCancel = false;
@@ -47,7 +44,8 @@ function handleNumber(event) {
 }
 
 function handleDecimal() {
-    if ((decimalUsed === false) && (!displayScreen.textContent.includes('.'))) {
+    if (decimalUsed === false) {
+        console.log(decimalUsed)
         let currNum = displayScreen.textContent;
         subNumber = String(Number(currNum)) + '.';
         updateDisplay(subNumber);
@@ -55,6 +53,9 @@ function handleDecimal() {
         prevIsCancel = false;
         prevIsEqual = false;
         decimalUsed = true;
+        console.log(decimalUsed)
+        console.log('-----------')
+
     }
 }
 

@@ -47,7 +47,7 @@ function handleNumber(event) {
 }
 
 function handleDecimal() {
-    if ((decimalUsed === false) && (!displayScreen.textContent.includes('.'))) {
+    if ((decimalUsed === false) && (~displayScreen.textContent.includes('.'))) {
         let currNum = displayScreen.textContent;
         subNumber = String(Number(currNum)) + '.';
         updateDisplay(subNumber);

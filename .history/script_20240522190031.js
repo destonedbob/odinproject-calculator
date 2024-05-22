@@ -37,25 +37,10 @@ function handleNumber(event) {
     }
     let currNum = displayScreen.textContent;
     subNumber = currNum + event.target.textContent;
-    console.log(currNum)
-    console.log(subNumber)
-
     updateDisplay(Number(subNumber));
     prevIsNumber = true;
     prevIsCancel = false;
     prevIsEqual = false;
-}
-
-function handleDecimal() {
-    if ((decimalUsed === false) && (!displayScreen.textContent.includes('.'))) {
-        let currNum = displayScreen.textContent;
-        subNumber = String(Number(currNum)) + '.';
-        updateDisplay(subNumber);
-        prevIsNumber = true;
-        prevIsCancel = false;
-        prevIsEqual = false;
-        decimalUsed = true;
-    }
 }
 
 function handleOperator(event) {
@@ -92,7 +77,6 @@ function handleOperator(event) {
     prevOperator = currOperator;
     prevIsCancel = false;
     prevIsEqual = false;
-    decimalUsed = false;
 
 }
 
@@ -106,7 +90,6 @@ function handleEqual() {
     prevOperator = null;
     prevIsCancel = false;
     prevIsEqual = true;
-    decimalUsed = false;
 
 }
 
@@ -162,9 +145,6 @@ let subNumber = '0';
 let prevIsNumber = true;
 let prevIsCancel = false;
 let prevIsEqual = false;
-let decimalUsed = false;
-
-
 let operatorMappingSymbol = {
     'add' : '+',
     'subtract': '-',
@@ -188,4 +168,3 @@ operatorList.forEach( button => {
 })
 equalButton.addEventListener('click', handleEqual);
 signButton.addEventListener('click', handleSign);
-dotButton.addEventListener('click', handleDecimal);

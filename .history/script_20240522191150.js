@@ -37,17 +37,14 @@ function handleNumber(event) {
     }
     let currNum = displayScreen.textContent;
     subNumber = currNum + event.target.textContent;
-    console.log(currNum)
-    console.log(subNumber)
-
     updateDisplay(Number(subNumber));
     prevIsNumber = true;
     prevIsCancel = false;
     prevIsEqual = false;
 }
 
-function handleDecimal() {
-    if ((decimalUsed === false) && (!displayScreen.textContent.includes('.'))) {
+function handleDecimal(event) {
+    if (decimalUsed === false) {
         let currNum = displayScreen.textContent;
         subNumber = String(Number(currNum)) + '.';
         updateDisplay(subNumber);
@@ -92,7 +89,6 @@ function handleOperator(event) {
     prevOperator = currOperator;
     prevIsCancel = false;
     prevIsEqual = false;
-    decimalUsed = false;
 
 }
 
@@ -106,7 +102,6 @@ function handleEqual() {
     prevOperator = null;
     prevIsCancel = false;
     prevIsEqual = true;
-    decimalUsed = false;
 
 }
 
